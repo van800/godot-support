@@ -7,6 +7,9 @@ import com.intellij.execution.configurations.RunProfileState
 import com.intellij.execution.executors.DefaultDebugExecutor
 import com.intellij.execution.runners.ExecutionEnvironment
 import com.intellij.openapi.project.Project
+import com.jetbrains.rdclient.util.idea.toIOFile
+import com.jetbrains.rider.plugins.godot.GodotProjectDiscoverer
+import com.jetbrains.rider.plugins.godot.GodotServer
 import com.jetbrains.rider.run.configurations.exe.ExeConfiguration
 import com.jetbrains.rider.run.configurations.exe.ExeConfigurationParameters
 import com.jetbrains.rider.run.configurations.remote.DotNetRemoteConfiguration
@@ -26,5 +29,21 @@ class GodotDebugRunConfiguration(name:String, project: Project, factory: Configu
             return GodotDebugProfileState(this, DotNetRemoteConfiguration(project, ConfigurationTypeUtil.findConfigurationType(MonoRemoteConfigType::class.java).factory, name), environment)
 
         return super.getState(executor, environment)
+    }
+
+    override fun checkConfiguration() {
+        val godotPathProperty = GodotProjectDiscoverer.getInstance(project).godotPath
+        if (!parameters.exePath.toIOFile().exists()){
+            val path = GodotServer.getGodotPath(project)
+            if (path != null){
+                if (path.toIOFile().exists()){
+                    godotPathProperty.set(path)
+                }
+            }
+        }
+
+        parameters.exePath = godotPathProperty.value ?: ""
+
+        super.checkConfiguration()
     }
 }
