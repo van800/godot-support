@@ -1,0 +1,8 @@
+﻿0000: SINGLE_LINE_COMMENT '; this is a single line comment'
+0031: NEW_LINE '\r\n'
+0033: IDENTIFIER 'identifier'
+0043: WHITESPACE ' '
+0044: SINGLE_LINE_COMMENT '; an empty comment will follow after an empty line'
+0094: NEW_LINE '\r\n'
+0096: NEW_LINE '\r\n'
+0098: SINGLE_LINE_COMMENT ';'

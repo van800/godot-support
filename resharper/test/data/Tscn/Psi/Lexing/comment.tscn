@@ -1,0 +1,4 @@
+; this is a single line comment
+identifier ; an empty comment will follow after an empty line
+
+;

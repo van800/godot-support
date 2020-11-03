@@ -1,0 +1,5 @@
+<Project>
+  <Import Project="$(MSBuildThisFileDirectory)..\rider-godot\build\DotNetSdkPath.generated.props"
+          Condition="Exists('$(MSBuildThisFileDirectory)..\rider-godot\build\DotNetSdkPath.generated.props')" />
+  <!-- TODO: Test what happens without the condition if props are not generated yet -->
+</Project>

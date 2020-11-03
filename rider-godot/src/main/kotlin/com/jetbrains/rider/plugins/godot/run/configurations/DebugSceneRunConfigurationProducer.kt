@@ -8,8 +8,9 @@ import com.intellij.openapi.roots.ProjectRootManager
 import com.intellij.openapi.util.Ref
 import com.intellij.openapi.util.io.FileUtil
 import com.intellij.psi.PsiElement
+import com.intellij.psi.PsiFile
 import com.jetbrains.rider.plugins.godot.GodotProjectDiscoverer
-import com.jetbrains.rider.plugins.godot.ideaInterop.fileTypes.tscn.TscnFile
+import com.jetbrains.rider.plugins.godot.ideaInterop.fileTypes.tscn.TscnLanguage
 import com.jetbrains.rider.plugins.godot.run.GodotRunConfigurationGenerator
 import java.io.File
 
@@ -27,6 +28,7 @@ class DebugSceneRunConfigurationProducer : LazyRunConfigurationProducer<GodotDeb
                                                context: ConfigurationContext,
                                                sourceElement: Ref<PsiElement>): Boolean {
         val file = getContainingFile(context) ?: return false
+        if (!isSceneFile(file)) return false
         val resPath = extractResPath(context) ?: return false
 
         val path = GodotProjectDiscoverer.getInstance(context.project).godotPath.value
@@ -53,9 +55,13 @@ class DebugSceneRunConfigurationProducer : LazyRunConfigurationProducer<GodotDeb
         return "res://$filename"
     }
 
-    private fun getContainingFile(context: ConfigurationContext):TscnFile? {
+    private fun isSceneFile(file: PsiFile): Boolean {
+        // TODO: Proper scene detection that does not rely on the extension
+        return file.language is TscnLanguage && file.virtualFile.extension == "tscn"
+    }
+
+    private fun getContainingFile(context: ConfigurationContext): PsiFile? {
         val location = context.psiLocation ?: return null
-        val file = location.containingFile as? TscnFile ?: return null
-        return file
+        return location.containingFile
     }
 }

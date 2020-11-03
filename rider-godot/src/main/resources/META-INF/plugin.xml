@@ -16,8 +16,12 @@
               language="TSCN"
               fieldName="INSTANCE"
               implementationClass="com.jetbrains.rider.plugins.godot.ideaInterop.fileTypes.tscn.TscnFileType"
-              extensions="tscn" />
+              extensions="tscn;tres;escn" />
     <lang.parserDefinition language="TSCN" implementationClass="com.jetbrains.rider.plugins.godot.ideaInterop.fileTypes.tscn.TscnParserDefinition" />
+    <!-- TODO: These can only be turned on if the backend parser reintroduces skipped whitespace like the Cg parser in the Unity plugin does
+    <lang.syntaxHighlighterFactory language="TSCN" implementationClass="com.jetbrains.rider.plugins.godot.ideaInterop.fileTypes.tscn.TscnSyntaxHighlighterProvider" />
+    <backend.markup.adapterFactory language="TSCN" implementationClass="com.jetbrains.rdclient.daemon.FrontendMarkupAdapterFactory" />
+    -->
 
     <runConfigurationProducer implementation="com.jetbrains.rider.plugins.godot.run.configurations.DebugSceneRunConfigurationProducer" />
   </extensions>

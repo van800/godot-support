@@ -1,0 +1,450 @@
+options
+{
+  // Parser options
+  // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+  // Parser class name and namespace
+  parserPackage="JetBrains.ReSharper.Plugins.Godot.Tscn.Psi.Gen";
+  parserClassName="TscnParserGenerated";
+
+  // Strongly type the lexer we're using. ILexer<int> is the caching lexer instance
+  "lexerClassName"="JetBrains.ReSharper.Psi.Parsing.ILexer<int>";
+
+  // FQN of (non-generated) class that provides messages for the parser
+  parserMessagesClass="JetBrains.ReSharper.Plugins.Godot.Tscn.Psi.Parsing.ParserMessages";
+
+  // Parser, error messages + token bitsets target folder
+  parserTargetSubdir="Parsing/Tscn";
+
+  // Don't generate a bitset unless there's 4 or more comparisons to be made
+  tokenBitsetThreshold=4;
+
+  // Composite node type/element generation options
+  // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+  // Existing language specific ITreeNode
+  "psiElementClassFQName"="JetBrains.ReSharper.Plugins.Godot.Tscn.Psi.Tree.ITscnTreeNode";
+
+  // Existing token type containing class + namespace
+  tokenTypePackageName="JetBrains.ReSharper.Plugins.Godot.Tscn.Psi.Parsing.TokenNodeTypes";
+  tokenTypeClassName="TscnTokenNodeTypes";
+
+  // Set base index for generated (element, not token) node types. Defaults to 2000, tokens default to 1000
+  // tokenTypeBaseIndex=2000;
+  // Tree node interface namespace + target folder (also target folder for navigators + visitors)
+  psiInterfacePackageName="JetBrains.ReSharper.Plugins.Godot.Tscn.Psi.Tree";
+  psiInterfacesTargetSubdir="Psi/Tscn/Tree";
+
+  // Tree node implementation namespace, base type and target folder
+  psiStubsPackageName="JetBrains.ReSharper.Plugins.Godot.Tscn.Psi.Tree.Impl";
+  psiStubsBaseClass="TscnCompositeElement";
+  psiStubsTargetSubdir="Psi/Tscn/Tree/Impl";
+
+  // Existing composite node type base class
+  elementTypeBaseClass="TscnCompositeNodeType";
+
+  // Namespace for generating custom interface when `customInterface` option used
+  customInterfacePackage="JetBrains.ReSharper.Plugins.Godot.Tscn.Psi.Tree";
+
+  // Any role used in this file that begins with this prefix must be defined in `ChildRole`
+  publicChildRolePrefix="Tscn_";
+
+  // Namespace and suffix for custom element instance implementation created by
+  // node type when `customImpl` option is specfied.
+  // Default suffix is `Impl`
+  customImplPackage="JetBrains.ReSharper.Plugins.Godot.Tscn.Psi.Tree.Impl";
+  "customImplSuffix"="";
+
+
+  // Required on. Changes behaviour of various things, e.g. public child role values based on prefix
+  disableReflection;
+
+  // Required. If missing, generates Add/Remove methods for each collection
+  generateWorkingPsi;
+}
+
+
+
+// Modifiers:
+//
+// `errorhandling` - includes following tokens in error handling. Checks next token is
+//   valid following token. Generates virtual HandleErrorInXXX method that will skip to
+//   the next valid following token. All tokens in between are added to the current error.
+// `noerrorhandling` - same as omitting `errorhandling`
+// `private` - the rule is effectively expanded inline, as part of the parent rule. Parent
+//   rule references it with no role information
+// `abstract` - does not create an element, interface or parse function.
+// `interface` - defines a rule that can match one of multiple rules, all of which will have
+//   a common base, e.g. `expression`, which can match `stringLiteralExpression`, `numericExpression`, etc.
+//
+// options:
+//
+// (not exhaustive)
+// `customImpl` - the parser generates the element interface and a "stub" base implementation, but
+//  generated node type will create an instance of a derived type that must be implemented manually.
+//  The custom name ends with the `"customImplSuffix"` global option, and must be declared in the
+//  `customImplPackage` namespace. It is named after the nonterminal, as usual. The generated base
+//  element instance ends with the suffix `Stub`
+// `customInterface` - generate element tree node with a custom interface. Name is the same
+//   as would be generated, but uses `customInterfacePackage` for namespace
+// `customParseFunction` - the parse function is abstract. The usually generated parse function is
+//   also generated as a protected method with the suffix `Internal`
+// `noInternalParseFunction` - stops the standard parse function being generated as parseXxxInernal
+//   when `customParseFunction` is specified. If `customParseFunction` isn't specified, this creates
+//   an error - a virtual method without an implementation.
+// `parsingContext` - push a new parsing context. This sets a "global" token follows set for the
+//   duration of the parsing context. Any nested nonterminals that implement `errorhandling` will
+//   also check this follow set when skipping tokens after an error
+// `stubBase="Foo"` - use `Foo` as the base class for the generated element instance. Overrides
+//   `psiStubsBaseClass` global option
+// `customVisit`
+// `customNavigator`
+// `customConstructor`
+// `customToString`
+// `interfaceName`
+// `elementType`
+// `elementTypeSet`
+// `fakeStub`
+// `result`
+// `multilevel`
+// `interfaceBaseName`
+// `customFollows`
+// `hasSemanticInterface`
+// `noInterface`
+// `expectedSymbol`
+// `overrideGetters`
+//
+// Rules:
+//
+// (terminal|nonterminal) `customParseFunction? <ROLE, PropertyName>? Quantifier?
+//
+// * A new tree element is generated for each rule definition, with properties for each child rule
+// * Rule starts with a terminal or a nonterminal token. If it's a terminal, it's a token from
+//   the lexer (e.g. IDENTIFIER), otherwise, it's an identifier for another rule
+// * An optional custom parse function comes next, preceded by a backtick. If specified, abstract
+//   methods called matchXXX and expectXXX are generated and called. The implementation of matchXXX
+//   should call expectXXX and return a TreeElement that represents what's been matched. The
+//   expectXXX method should look at the current token and return true if it's what's expected
+// * ROLE is the name of the child role generated. This can be a common role from the ChildRoles
+//   class, or a name for a private role. If no role definition is given, the node isn't added to
+//   the interface. A single property name can be used multiple times, in which case it is exposed
+//   as either a collection, or the lowest common node type.
+// * PropertyName is the name of the generated property to access this token
+// * Quantifier can be ommitted, meaning nonoptional, optional (?), zero or more (*) or one or more (+)
+//   Pipes and parentheses can also be used to separate and group rules
+//
+// !(#name:terminal|nonterminal) - e.g. !(#id:IDENTIFIER) or !(#id:shaderLabIdentifier)
+//
+// Captures the element into a named variable, to pass to another nonterminal. Parsing continues with the
+// next matching token in the following rules. This allows switching on the second or third rule of multiple
+// nonterminals that have a common prolog. E.g. two nonterminals starting with identifier but followed by
+// DOT and COMMA respectively. The captured element is passed to the nonterminal with square brackets, e.g.
+// qualifiedValue[id] and the parameter must be part of the nonterminal declaration, e.g. qualifiedValue[identifier id]
+// where the first part is the token type and the second is the name. Multiple parameters can be specified,
+// separated by commas. The captured element is used in the rules with an ampersand, and can have normal
+// role definitions, e.g. &id or &id<IDENTIFIER, Identifier>. A rule may also pass null
+//
+// nonterminal({ROLE, Getter})*
+//
+// Allows declaring a private nonterminal (that's expanded inline) without having to specify the roles and
+// getter names up front. Can be specified multiple times. Referenced in the rules with `@`. E.g.:
+//
+//     private theThing{ROLE, Getter}
+//     :
+//       MY_KEYWORD{@ROLE, @Getter}
+//     ;
+
+
+// The Tao of Error Handling
+//
+// * If a nonterminal fails to match the expected token, an exception is thrown
+//   * The remaining rules and subsequent tokens are unmatched and unconsumed
+// * The exception is rethrown by all parent nonterminals
+//   * The current work in progress elements are attached as it goes
+//   * Remaining rules and subsequent tokens are unmatched and unconsumed
+// * The first nonterminal that implements errorhandling:
+//   * Creates an error element from the exception text
+//   * Adds it as a child to the current work in progress element
+//   * Stops rethrowing
+//   * All remaining rules are not parsed
+//   * Skips tokens until one is in the valid follows set
+// * If a nonterminal implements errorhandling and successfully matches all of its rules, it must also
+//   be followed by a valid follow token, or an exception is thrown
+// * If no nonterminals implement errorhandling, the error element is not added to the tree
+// * If a nonterminal specifies a parsingContext option, it pushes a "global" follow set that any nested
+//   errorhandling nonterminal will also use when skipping tokens
+//   * Allows breaking the skip if there are no matching valid follows
+//
+// Custom error elements:
+// * Create an abstract errorElement nonterminal
+//   * It matches all tokens (make one optional so it also matches missing elements)
+//   * Use this as a rule to match if correct rules have failed
+//   * Options should include interfaceName="JB.RS.Psi.Tree.IErrorElement" and elementType="ERROR_ELEMENT"
+//   * This will create an abstract parse method - implement with TreeElementFactory.CreateErrorElement
+//     (no need to do any parsing - it's definitely an error)
+// * Abstract means it has a custom parse method
+//   * Implementation simply creates an error element and returns it
+//   * Does not advance or consume children, etc.
+//   * Means patterns in nonterminal definition are only useful as follow tokens
+// * Can create similar elements
+//   * Different set of tokens for different purposes, e.g. don't match closing braces
+//   * Again, only useful for follow tokens
+//   * Custom parse function can create error element, then skip all tokens until it finds a match,
+//     based on whatever rules are required. Skipping will add token as child to error element
+//
+// Guidance:
+//
+// * The root nonterminal should implement errorhandling, or the error element will not get attached to anything
+// * Split things up into smaller nested nonterminals that can be errorhandling
+// * If a token or nonterminal is to be used as a resync point, the nonterminal directly
+//   BEFORE it needs to implement errrorhandling
+// * Or, resync AFTER a token, not on it. E.g. don't resync on a closing paren, only on
+//   what follows a closing paren
+// * A private nonterminal with errorhandling can help without generating a node for the tree
+// * Use parsingContext when you have an errorhandling nested inside an errorhandling. The
+//   parsingContext adds new follow rules to the inner errorhandling follow set. ParsingContext
+//   requires errorhandling somewhere, or no-one will ever check for the follow token override
+
+// CSharp parser
+//
+// Argument list is set to error handling. Doesn't resync on closing paren, but on following token
+// argumentListAux is LPAREN argumentList RPAREN, errorhandling
+// argumentList is custom parse function. Of course. Handles leading comma, trailing comma,
+//   cSharpArgument. Missing arguments (due to trailing/leading comma) are added as FakeArgument
+// cSharpArgument is custom function (and error handling)
+//   include ParseCSharpArgumentInternal + HandleErrorInCSharpArgument
+//   ParseCSharpArgumentInternal doesn't get called. Custom function calls error handler
+
+
+// TSCN-specific notes
+//
+// This parser definition is based off the source code of Godot's resource_format_text.cpp
+// and variant_parser.cpp as of format version 2. The official documentation of the format
+// does not cover all cases and some parts are unfinished.
+//
+// Variant is Godot's dynamic data type and all references to variant in rules below refer
+// to this.
+//
+// We approach contextual keywords by lexing them as IDENTIFIERs and then handling them in
+// custom parsing methods. This is the same approach as used by the C# parser in ReSharper.
+//
+//   Another approach would be to instead lex these keywords as individual keywords and then
+//   define a generic identifier rule that would also consider keywords in contexts where
+//   applicable. An example of this second approach would be ShaderLab support in the Unity
+//   ReSharper plugin.
+//
+// The individual sections of the file will always follow the same order when generated by Godot,
+// but we support even out-of-order sections for simplicity.
+// The expected order is:
+//  - file descriptor
+//  - external resources
+//  - internal resources (last one is the main resource in a resource file)
+//  - nodes (only in scenes)
+//  - connections (only in scenes)
+
+errorhandling tscnFile
+options {
+  stubBase="TscnFileElement";
+}
+:
+  // Both resources and scenes start with an LBRACKET, so we match it here
+  // and pass it in so it can be owned by the descriptor.
+  !(#lbr:LBRACKET)
+  (
+    (
+      resourceDescriptor<FILE_DESCRIPTOR, FileDescriptor>[lbr]
+      resourceElement<RESOURCE_CONTENTS, ResourceContents>*
+    )
+    | (
+      sceneDescriptor<FILE_DESCRIPTOR, FileDescriptor>[lbr]
+      sceneElement<SCENE_CONTENTS, SceneContents>*
+    )
+  )
+;
+
+errorhandling resourceElement
+:
+  !(#lbr:LBRACKET)
+  ( 
+    extResource<ELEMENT, Element>[lbr]
+    | subResource<ELEMENT, Element>[lbr]
+    | mainResource<ELEMENT, Element>[lbr]
+  )
+;
+
+errorhandling sceneElement
+:
+  !(#lbr:LBRACKET)
+  ( 
+    extResource<ELEMENT, Element>[lbr]
+    | subResource<ELEMENT, Element>[lbr]
+    | node<ELEMENT, Element>[lbr]
+    | connection<ELEMENT, Element>[lbr]
+  )
+;
+
+// File Descriptor
+
+errorhandling sceneDescriptor[LBRACKET lbr]
+:
+  &lbr
+  SCENE_KEYWORD`SceneKeyword
+  loadStepsKeyValuePair<LOAD_STEPS_PAIR, LoadStepsPair>?
+  formatKeyValuePair<FORMAT_PAIR, FormatPair>
+  RBRACKET
+;
+
+errorhandling resourceDescriptor[LBRACKET lbr]
+:
+  &lbr
+  RESOURCE_KEYWORD`ResourceKeyword
+  typeKeyValuePair<TYPE_PAIR, TypePair>
+  loadStepsKeyValuePair<LOAD_STEPS_PAIR, LoadStepsPair>?
+  formatKeyValuePair<FORMAT_PAIR, FormatPair>
+  RBRACKET
+;
+
+errorhandling formatKeyValuePair
+:
+  FORMAT_KEYWORD`FormatKeyword
+  EQUALS
+  NUMERIC_LITERAL<NUMERIC_LITERAL,Value>
+;
+
+errorhandling typeKeyValuePair
+:
+  TYPE_KEYWORD`TypeKeyword
+  EQUALS
+  STRING_LITERAL<STRING_LITERAL,Value>
+;
+
+errorhandling loadStepsKeyValuePair
+:
+  LOAD_STEPS_KEYWORD`LoadStepsKeyword
+  EQUALS
+  NUMERIC_LITERAL<NUMERIC_LITERAL,Value>
+;
+
+// External resources
+
+errorhandling extResource[LBRACKET lbr]
+:
+  &lbr
+  EXT_RESOURCE_KEYWORD`ExtResourceKeyword
+  keyValuePair<HEADING_VALUE, HeadingValues>*
+  RBRACKET
+  // TODO: Can external resources have a body?
+  keyValuePair<BODY_VALUE, Values>*
+;
+
+// Internal resources
+
+errorhandling subResource[LBRACKET lbr]
+:
+  &lbr
+  SUB_RESOURCE_KEYWORD`SubResourceKeyword
+  keyValuePair<HEADING_VALUE, HeadingValues>*
+  RBRACKET
+  keyValuePair<BODY_VALUE, Values>*
+;
+
+errorhandling mainResource[LBRACKET lbr]
+:
+  &lbr
+  MAIN_RESOURCE_KEYWORD`MainResourceKeyword
+  keyValuePair<HEADING_VALUE, HeadingValues>*
+  RBRACKET
+  keyValuePair<BODY_VALUE, Values>*
+;
+
+// Nodes
+
+errorhandling node[LBRACKET lbr]
+options {
+  customInterface;
+  stubBase = "TscnDeclarationBase";
+}
+:
+  &lbr
+  NODE_KEYWORD`NodeKeyword
+  keyValuePair<HEADING_VALUE, HeadingValues>*
+  RBRACKET
+  keyValuePair<BODY_VALUE, Values>*
+;
+
+// Connections
+
+errorhandling connection[LBRACKET lbr]
+:
+  &lbr
+  CONNECTION_KEYWORD`ConnectionKeyword
+  keyValuePair<HEADING_VALUE, HeadingValues>*
+  RBRACKET
+  keyValuePair<BODY_VALUE, Values>*
+;
+
+// General
+
+errorhandling keyValuePair
+:
+  IDENTIFIER<IDENTIFIER,Identifier>
+  EQUALS
+  variantValue<VALUE,Value>
+;
+
+errorhandling variantConstructor
+:
+  // Individual keywords for each available type could also be used
+  IDENTIFIER<TYPE_IDENTIFIER, TypeIdentifier>
+  LPAREN
+  LIST (variantValue<VALUE, Values>?) SEP COMMA
+  RPAREN
+;
+
+errorhandling variantObject
+:
+  LBRACE
+  LIST (variantMember<MEMBER, Members>?) SEP COMMA
+  RBRACE
+;
+
+errorhandling variantMember
+:
+  STRING_LITERAL<KEY, KeyToken>
+  COLON
+  variantValue<VALUE, Value>
+;
+
+errorhandling variantArray
+:
+  LBRACKET
+  LIST (variantValue<VALUE, Values>?) SEP COMMA
+  RBRACKET
+;
+
+interface variantValue
+:
+  // The order here matters. The variantLiteral has to go before variantConstructor
+  // as the literal includes contextual keywords (identifiers) as some of the options.
+  // The constructor always starts with an identifier, so it would capture the contextual
+  // keyword as an identifier and the result would be an error element. However, since the
+  // literals are always a single token, we can easily check for those first to avoid this issue.
+  variantObject
+    | variantArray
+    | variantLiteral
+    | variantConstructor
+;
+
+errorhandling variantLiteral
+:
+  NUMERIC_LITERAL<LITERAL, Literal>
+  | STRING_LITERAL<LITERAL, Literal>
+  | STRING_NAME_LITERAL<LITERAL, Literal>
+  | COLOR_LITERAL<LITERAL, Literal>
+  | FALSE_KEYWORD`FalseKeyword<LITERAL, Literal>
+  | TRUE_KEYWORD`TrueKeyword<LITERAL, Literal>
+  | NULL_KEYWORD`NullKeyword<LITERAL, Literal>
+  | NIL_KEYWORD`NilKeyword<LITERAL, Literal>
+  | INF_KEYWORD`InfKeyword<LITERAL, Literal> 
+  | NAN_KEYWORD`NaNKeyword<LITERAL, Literal>
+;

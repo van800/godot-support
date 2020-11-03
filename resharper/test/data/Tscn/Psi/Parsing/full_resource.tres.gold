@@ -1,0 +1,85 @@
+﻿Language: PsiLanguageType:TSCN
+ITscnFile
+  IResourceDescriptor
+    TscnTokenNodeTypes+LbracketTokenElement(type:LBRACKET, text:[)
+    TscnTokenNodeTypes+ResourceKeywordTokenElement(type:RESOURCE_KEYWORD, text:gd_resource)
+    ITypeKeyValuePair
+      TscnTokenNodeTypes+TypeKeywordTokenElement(type:TYPE_KEYWORD, text:type)
+      TscnTokenNodeTypes+EqualsTokenElement(type:EQUALS, text:=)
+      TscnGenericTokenNode(type:STRING_LITERAL, text:"AudioBusLayout")
+    IFormatKeyValuePair
+      TscnTokenNodeTypes+FormatKeywordTokenElement(type:FORMAT_KEYWORD, text:format)
+      TscnTokenNodeTypes+EqualsTokenElement(type:EQUALS, text:=)
+      TscnGenericTokenNode(type:NUMERIC_LITERAL, text:2)
+    TscnTokenNodeTypes+RbracketTokenElement(type:RBRACKET, text:])
+  IResourceElement
+    IMainResource
+      TscnTokenNodeTypes+LbracketTokenElement(type:LBRACKET, text:[)
+      TscnTokenNodeTypes+MainResourceKeywordTokenElement(type:MAIN_RESOURCE_KEYWORD, text:resource)
+      TscnTokenNodeTypes+RbracketTokenElement(type:RBRACKET, text:])
+      IKeyValuePair
+        TscnIdentifierTokenNode(type:IDENTIFIER, text:bus/0/volume_db)
+        TscnTokenNodeTypes+EqualsTokenElement(type:EQUALS, text:=)
+        IVariantLiteral
+          TscnGenericTokenNode(type:NUMERIC_LITERAL, text:3.0)
+      IKeyValuePair
+        TscnIdentifierTokenNode(type:IDENTIFIER, text:bus/1/name)
+        TscnTokenNodeTypes+EqualsTokenElement(type:EQUALS, text:=)
+        IVariantLiteral
+          TscnGenericTokenNode(type:STRING_LITERAL, text:"music")
+      IKeyValuePair
+        TscnIdentifierTokenNode(type:IDENTIFIER, text:bus/1/solo)
+        TscnTokenNodeTypes+EqualsTokenElement(type:EQUALS, text:=)
+        IVariantLiteral
+          TscnTokenNodeTypes+FalseKeywordTokenElement(type:FALSE_KEYWORD, text:false)
+      IKeyValuePair
+        TscnIdentifierTokenNode(type:IDENTIFIER, text:bus/1/mute)
+        TscnTokenNodeTypes+EqualsTokenElement(type:EQUALS, text:=)
+        IVariantLiteral
+          TscnTokenNodeTypes+FalseKeywordTokenElement(type:FALSE_KEYWORD, text:false)
+      IKeyValuePair
+        TscnIdentifierTokenNode(type:IDENTIFIER, text:bus/1/bypass_fx)
+        TscnTokenNodeTypes+EqualsTokenElement(type:EQUALS, text:=)
+        IVariantLiteral
+          TscnTokenNodeTypes+FalseKeywordTokenElement(type:FALSE_KEYWORD, text:false)
+      IKeyValuePair
+        TscnIdentifierTokenNode(type:IDENTIFIER, text:bus/1/volume_db)
+        TscnTokenNodeTypes+EqualsTokenElement(type:EQUALS, text:=)
+        IVariantLiteral
+          TscnGenericTokenNode(type:NUMERIC_LITERAL, text:-10.1)
+      IKeyValuePair
+        TscnIdentifierTokenNode(type:IDENTIFIER, text:bus/1/send)
+        TscnTokenNodeTypes+EqualsTokenElement(type:EQUALS, text:=)
+        IVariantLiteral
+          TscnGenericTokenNode(type:STRING_LITERAL, text:"Master")
+      IKeyValuePair
+        TscnIdentifierTokenNode(type:IDENTIFIER, text:bus/2/name)
+        TscnTokenNodeTypes+EqualsTokenElement(type:EQUALS, text:=)
+        IVariantLiteral
+          TscnGenericTokenNode(type:STRING_LITERAL, text:"sfx")
+      IKeyValuePair
+        TscnIdentifierTokenNode(type:IDENTIFIER, text:bus/2/solo)
+        TscnTokenNodeTypes+EqualsTokenElement(type:EQUALS, text:=)
+        IVariantLiteral
+          TscnTokenNodeTypes+FalseKeywordTokenElement(type:FALSE_KEYWORD, text:false)
+      IKeyValuePair
+        TscnIdentifierTokenNode(type:IDENTIFIER, text:bus/2/mute)
+        TscnTokenNodeTypes+EqualsTokenElement(type:EQUALS, text:=)
+        IVariantLiteral
+          TscnTokenNodeTypes+FalseKeywordTokenElement(type:FALSE_KEYWORD, text:false)
+      IKeyValuePair
+        TscnIdentifierTokenNode(type:IDENTIFIER, text:bus/2/bypass_fx)
+        TscnTokenNodeTypes+EqualsTokenElement(type:EQUALS, text:=)
+        IVariantLiteral
+          TscnTokenNodeTypes+FalseKeywordTokenElement(type:FALSE_KEYWORD, text:false)
+      IKeyValuePair
+        TscnIdentifierTokenNode(type:IDENTIFIER, text:bus/2/volume_db)
+        TscnTokenNodeTypes+EqualsTokenElement(type:EQUALS, text:=)
+        IVariantLiteral
+          TscnGenericTokenNode(type:NUMERIC_LITERAL, text:-10.2)
+      IKeyValuePair
+        TscnIdentifierTokenNode(type:IDENTIFIER, text:bus/2/send)
+        TscnTokenNodeTypes+EqualsTokenElement(type:EQUALS, text:=)
+        IVariantLiteral
+          TscnGenericTokenNode(type:STRING_LITERAL, text:"Master")
+

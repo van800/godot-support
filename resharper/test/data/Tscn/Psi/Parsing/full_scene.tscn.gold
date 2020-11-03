@@ -1,0 +1,731 @@
+﻿Language: PsiLanguageType:TSCN
+ITscnFile
+  ISceneDescriptor
+    TscnTokenNodeTypes+LbracketTokenElement(type:LBRACKET, text:[)
+    TscnTokenNodeTypes+SceneKeywordTokenElement(type:SCENE_KEYWORD, text:gd_scene)
+    ILoadStepsKeyValuePair
+      TscnTokenNodeTypes+LoadStepsKeywordTokenElement(type:LOAD_STEPS_KEYWORD, text:load_steps)
+      TscnTokenNodeTypes+EqualsTokenElement(type:EQUALS, text:=)
+      TscnGenericTokenNode(type:NUMERIC_LITERAL, text:8)
+    IFormatKeyValuePair
+      TscnTokenNodeTypes+FormatKeywordTokenElement(type:FORMAT_KEYWORD, text:format)
+      TscnTokenNodeTypes+EqualsTokenElement(type:EQUALS, text:=)
+      TscnGenericTokenNode(type:NUMERIC_LITERAL, text:2)
+    TscnTokenNodeTypes+RbracketTokenElement(type:RBRACKET, text:])
+  ISceneElement
+    IExtResource
+      TscnTokenNodeTypes+LbracketTokenElement(type:LBRACKET, text:[)
+      TscnTokenNodeTypes+ExtResourceKeywordTokenElement(type:EXT_RESOURCE_KEYWORD, text:ext_resource)
+      IKeyValuePair
+        TscnIdentifierTokenNode(type:IDENTIFIER, text:path)
+        TscnTokenNodeTypes+EqualsTokenElement(type:EQUALS, text:=)
+        IVariantLiteral
+          TscnGenericTokenNode(type:STRING_LITERAL, text:"res://Main.cs")
+      IKeyValuePair
+        TscnIdentifierTokenNode(type:IDENTIFIER, text:type)
+        TscnTokenNodeTypes+EqualsTokenElement(type:EQUALS, text:=)
+        IVariantLiteral
+          TscnGenericTokenNode(type:STRING_LITERAL, text:"Script")
+      IKeyValuePair
+        TscnIdentifierTokenNode(type:IDENTIFIER, text:id)
+        TscnTokenNodeTypes+EqualsTokenElement(type:EQUALS, text:=)
+        IVariantLiteral
+          TscnGenericTokenNode(type:NUMERIC_LITERAL, text:1)
+      TscnTokenNodeTypes+RbracketTokenElement(type:RBRACKET, text:])
+  ISceneElement
+    IExtResource
+      TscnTokenNodeTypes+LbracketTokenElement(type:LBRACKET, text:[)
+      TscnTokenNodeTypes+ExtResourceKeywordTokenElement(type:EXT_RESOURCE_KEYWORD, text:ext_resource)
+      IKeyValuePair
+        TscnIdentifierTokenNode(type:IDENTIFIER, text:path)
+        TscnTokenNodeTypes+EqualsTokenElement(type:EQUALS, text:=)
+        IVariantLiteral
+          TscnGenericTokenNode(type:STRING_LITERAL, text:"res://Mob.tscn")
+      IKeyValuePair
+        TscnIdentifierTokenNode(type:IDENTIFIER, text:type)
+        TscnTokenNodeTypes+EqualsTokenElement(type:EQUALS, text:=)
+        IVariantLiteral
+          TscnGenericTokenNode(type:STRING_LITERAL, text:"PackedScene")
+      IKeyValuePair
+        TscnIdentifierTokenNode(type:IDENTIFIER, text:id)
+        TscnTokenNodeTypes+EqualsTokenElement(type:EQUALS, text:=)
+        IVariantLiteral
+          TscnGenericTokenNode(type:NUMERIC_LITERAL, text:2)
+      TscnTokenNodeTypes+RbracketTokenElement(type:RBRACKET, text:])
+  ISceneElement
+    IExtResource
+      TscnTokenNodeTypes+LbracketTokenElement(type:LBRACKET, text:[)
+      TscnTokenNodeTypes+ExtResourceKeywordTokenElement(type:EXT_RESOURCE_KEYWORD, text:ext_resource)
+      IKeyValuePair
+        TscnIdentifierTokenNode(type:IDENTIFIER, text:path)
+        TscnTokenNodeTypes+EqualsTokenElement(type:EQUALS, text:=)
+        IVariantLiteral
+          TscnGenericTokenNode(type:STRING_LITERAL, text:"res://Player.tscn")
+      IKeyValuePair
+        TscnIdentifierTokenNode(type:IDENTIFIER, text:type)
+        TscnTokenNodeTypes+EqualsTokenElement(type:EQUALS, text:=)
+        IVariantLiteral
+          TscnGenericTokenNode(type:STRING_LITERAL, text:"PackedScene")
+      IKeyValuePair
+        TscnIdentifierTokenNode(type:IDENTIFIER, text:id)
+        TscnTokenNodeTypes+EqualsTokenElement(type:EQUALS, text:=)
+        IVariantLiteral
+          TscnGenericTokenNode(type:NUMERIC_LITERAL, text:3)
+      TscnTokenNodeTypes+RbracketTokenElement(type:RBRACKET, text:])
+  ISceneElement
+    IExtResource
+      TscnTokenNodeTypes+LbracketTokenElement(type:LBRACKET, text:[)
+      TscnTokenNodeTypes+ExtResourceKeywordTokenElement(type:EXT_RESOURCE_KEYWORD, text:ext_resource)
+      IKeyValuePair
+        TscnIdentifierTokenNode(type:IDENTIFIER, text:path)
+        TscnTokenNodeTypes+EqualsTokenElement(type:EQUALS, text:=)
+        IVariantLiteral
+          TscnGenericTokenNode(type:STRING_LITERAL, text:"res://HUD.tscn")
+      IKeyValuePair
+        TscnIdentifierTokenNode(type:IDENTIFIER, text:type)
+        TscnTokenNodeTypes+EqualsTokenElement(type:EQUALS, text:=)
+        IVariantLiteral
+          TscnGenericTokenNode(type:STRING_LITERAL, text:"PackedScene")
+      IKeyValuePair
+        TscnIdentifierTokenNode(type:IDENTIFIER, text:id)
+        TscnTokenNodeTypes+EqualsTokenElement(type:EQUALS, text:=)
+        IVariantLiteral
+          TscnGenericTokenNode(type:NUMERIC_LITERAL, text:4)
+      TscnTokenNodeTypes+RbracketTokenElement(type:RBRACKET, text:])
+  ISceneElement
+    IExtResource
+      TscnTokenNodeTypes+LbracketTokenElement(type:LBRACKET, text:[)
+      TscnTokenNodeTypes+ExtResourceKeywordTokenElement(type:EXT_RESOURCE_KEYWORD, text:ext_resource)
+      IKeyValuePair
+        TscnIdentifierTokenNode(type:IDENTIFIER, text:path)
+        TscnTokenNodeTypes+EqualsTokenElement(type:EQUALS, text:=)
+        IVariantLiteral
+          TscnGenericTokenNode(type:STRING_LITERAL, text:"res://art/House In a Forest Loop.ogg")
+      IKeyValuePair
+        TscnIdentifierTokenNode(type:IDENTIFIER, text:type)
+        TscnTokenNodeTypes+EqualsTokenElement(type:EQUALS, text:=)
+        IVariantLiteral
+          TscnGenericTokenNode(type:STRING_LITERAL, text:"AudioStream")
+      IKeyValuePair
+        TscnIdentifierTokenNode(type:IDENTIFIER, text:id)
+        TscnTokenNodeTypes+EqualsTokenElement(type:EQUALS, text:=)
+        IVariantLiteral
+          TscnGenericTokenNode(type:NUMERIC_LITERAL, text:5)
+      TscnTokenNodeTypes+RbracketTokenElement(type:RBRACKET, text:])
+  ISceneElement
+    IExtResource
+      TscnTokenNodeTypes+LbracketTokenElement(type:LBRACKET, text:[)
+      TscnTokenNodeTypes+ExtResourceKeywordTokenElement(type:EXT_RESOURCE_KEYWORD, text:ext_resource)
+      IKeyValuePair
+        TscnIdentifierTokenNode(type:IDENTIFIER, text:path)
+        TscnTokenNodeTypes+EqualsTokenElement(type:EQUALS, text:=)
+        IVariantLiteral
+          TscnGenericTokenNode(type:STRING_LITERAL, text:"res://art/gameover.wav")
+      IKeyValuePair
+        TscnIdentifierTokenNode(type:IDENTIFIER, text:type)
+        TscnTokenNodeTypes+EqualsTokenElement(type:EQUALS, text:=)
+        IVariantLiteral
+          TscnGenericTokenNode(type:STRING_LITERAL, text:"AudioStream")
+      IKeyValuePair
+        TscnIdentifierTokenNode(type:IDENTIFIER, text:id)
+        TscnTokenNodeTypes+EqualsTokenElement(type:EQUALS, text:=)
+        IVariantLiteral
+          TscnGenericTokenNode(type:NUMERIC_LITERAL, text:6)
+      TscnTokenNodeTypes+RbracketTokenElement(type:RBRACKET, text:])
+  ISceneElement
+    ISubResource
+      TscnTokenNodeTypes+LbracketTokenElement(type:LBRACKET, text:[)
+      TscnTokenNodeTypes+SubResourceKeywordTokenElement(type:SUB_RESOURCE_KEYWORD, text:sub_resource)
+      IKeyValuePair
+        TscnIdentifierTokenNode(type:IDENTIFIER, text:type)
+        TscnTokenNodeTypes+EqualsTokenElement(type:EQUALS, text:=)
+        IVariantLiteral
+          TscnGenericTokenNode(type:STRING_LITERAL, text:"Curve2D")
+      IKeyValuePair
+        TscnIdentifierTokenNode(type:IDENTIFIER, text:id)
+        TscnTokenNodeTypes+EqualsTokenElement(type:EQUALS, text:=)
+        IVariantLiteral
+          TscnGenericTokenNode(type:NUMERIC_LITERAL, text:1)
+      TscnTokenNodeTypes+RbracketTokenElement(type:RBRACKET, text:])
+      IKeyValuePair
+        TscnIdentifierTokenNode(type:IDENTIFIER, text:_data)
+        TscnTokenNodeTypes+EqualsTokenElement(type:EQUALS, text:=)
+        IVariantObject
+          TscnTokenNodeTypes+LbraceTokenElement(type:LBRACE, text:{)
+          IVariantMember
+            TscnGenericTokenNode(type:STRING_LITERAL, text:"points")
+            TscnTokenNodeTypes+ColonTokenElement(type:COLON, text::)
+            IVariantConstructor
+              TscnIdentifierTokenNode(type:IDENTIFIER, text:PoolVector2Array)
+              TscnTokenNodeTypes+LparenTokenElement(type:LPAREN, text:()
+              IVariantLiteral
+                TscnGenericTokenNode(type:NUMERIC_LITERAL, text:0)
+              TscnTokenNodeTypes+CommaTokenElement(type:COMMA, text:,)
+              IVariantLiteral
+                TscnGenericTokenNode(type:NUMERIC_LITERAL, text:0)
+              TscnTokenNodeTypes+CommaTokenElement(type:COMMA, text:,)
+              IVariantLiteral
+                TscnGenericTokenNode(type:NUMERIC_LITERAL, text:0)
+              TscnTokenNodeTypes+CommaTokenElement(type:COMMA, text:,)
+              IVariantLiteral
+                TscnGenericTokenNode(type:NUMERIC_LITERAL, text:0)
+              TscnTokenNodeTypes+CommaTokenElement(type:COMMA, text:,)
+              IVariantLiteral
+                TscnGenericTokenNode(type:NUMERIC_LITERAL, text:0)
+              TscnTokenNodeTypes+CommaTokenElement(type:COMMA, text:,)
+              IVariantLiteral
+                TscnGenericTokenNode(type:NUMERIC_LITERAL, text:0)
+              TscnTokenNodeTypes+CommaTokenElement(type:COMMA, text:,)
+              IVariantLiteral
+                TscnGenericTokenNode(type:NUMERIC_LITERAL, text:0)
+              TscnTokenNodeTypes+CommaTokenElement(type:COMMA, text:,)
+              IVariantLiteral
+                TscnGenericTokenNode(type:NUMERIC_LITERAL, text:0)
+              TscnTokenNodeTypes+CommaTokenElement(type:COMMA, text:,)
+              IVariantLiteral
+                TscnGenericTokenNode(type:NUMERIC_LITERAL, text:0)
+              TscnTokenNodeTypes+CommaTokenElement(type:COMMA, text:,)
+              IVariantLiteral
+                TscnGenericTokenNode(type:NUMERIC_LITERAL, text:0)
+              TscnTokenNodeTypes+CommaTokenElement(type:COMMA, text:,)
+              IVariantLiteral
+                TscnGenericTokenNode(type:NUMERIC_LITERAL, text:480)
+              TscnTokenNodeTypes+CommaTokenElement(type:COMMA, text:,)
+              IVariantLiteral
+                TscnGenericTokenNode(type:NUMERIC_LITERAL, text:0)
+              TscnTokenNodeTypes+CommaTokenElement(type:COMMA, text:,)
+              IVariantLiteral
+                TscnGenericTokenNode(type:NUMERIC_LITERAL, text:0)
+              TscnTokenNodeTypes+CommaTokenElement(type:COMMA, text:,)
+              IVariantLiteral
+                TscnGenericTokenNode(type:NUMERIC_LITERAL, text:0)
+              TscnTokenNodeTypes+CommaTokenElement(type:COMMA, text:,)
+              IVariantLiteral
+                TscnGenericTokenNode(type:NUMERIC_LITERAL, text:0)
+              TscnTokenNodeTypes+CommaTokenElement(type:COMMA, text:,)
+              IVariantLiteral
+                TscnGenericTokenNode(type:NUMERIC_LITERAL, text:0)
+              TscnTokenNodeTypes+CommaTokenElement(type:COMMA, text:,)
+              IVariantLiteral
+                TscnGenericTokenNode(type:NUMERIC_LITERAL, text:480)
+              TscnTokenNodeTypes+CommaTokenElement(type:COMMA, text:,)
+              IVariantLiteral
+                TscnGenericTokenNode(type:NUMERIC_LITERAL, text:720)
+              TscnTokenNodeTypes+CommaTokenElement(type:COMMA, text:,)
+              IVariantLiteral
+                TscnGenericTokenNode(type:NUMERIC_LITERAL, text:0)
+              TscnTokenNodeTypes+CommaTokenElement(type:COMMA, text:,)
+              IVariantLiteral
+                TscnGenericTokenNode(type:NUMERIC_LITERAL, text:0)
+              TscnTokenNodeTypes+CommaTokenElement(type:COMMA, text:,)
+              IVariantLiteral
+                TscnGenericTokenNode(type:NUMERIC_LITERAL, text:0)
+              TscnTokenNodeTypes+CommaTokenElement(type:COMMA, text:,)
+              IVariantLiteral
+                TscnGenericTokenNode(type:NUMERIC_LITERAL, text:0)
+              TscnTokenNodeTypes+CommaTokenElement(type:COMMA, text:,)
+              IVariantLiteral
+                TscnGenericTokenNode(type:NUMERIC_LITERAL, text:0)
+              TscnTokenNodeTypes+CommaTokenElement(type:COMMA, text:,)
+              IVariantLiteral
+                TscnGenericTokenNode(type:NUMERIC_LITERAL, text:720)
+              TscnTokenNodeTypes+CommaTokenElement(type:COMMA, text:,)
+              IVariantLiteral
+                TscnGenericTokenNode(type:NUMERIC_LITERAL, text:0)
+              TscnTokenNodeTypes+CommaTokenElement(type:COMMA, text:,)
+              IVariantLiteral
+                TscnGenericTokenNode(type:NUMERIC_LITERAL, text:0)
+              TscnTokenNodeTypes+CommaTokenElement(type:COMMA, text:,)
+              IVariantLiteral
+                TscnGenericTokenNode(type:NUMERIC_LITERAL, text:0)
+              TscnTokenNodeTypes+CommaTokenElement(type:COMMA, text:,)
+              IVariantLiteral
+                TscnGenericTokenNode(type:NUMERIC_LITERAL, text:0)
+              TscnTokenNodeTypes+CommaTokenElement(type:COMMA, text:,)
+              IVariantLiteral
+                TscnGenericTokenNode(type:NUMERIC_LITERAL, text:0)
+              TscnTokenNodeTypes+CommaTokenElement(type:COMMA, text:,)
+              IVariantLiteral
+                TscnGenericTokenNode(type:NUMERIC_LITERAL, text:0)
+              TscnTokenNodeTypes+RparenTokenElement(type:RPAREN, text:))
+          TscnTokenNodeTypes+RbraceTokenElement(type:RBRACE, text:})
+  ISceneElement
+    INode
+      TscnTokenNodeTypes+LbracketTokenElement(type:LBRACKET, text:[)
+      TscnTokenNodeTypes+NodeKeywordTokenElement(type:NODE_KEYWORD, text:node)
+      IKeyValuePair
+        TscnIdentifierTokenNode(type:IDENTIFIER, text:name)
+        TscnTokenNodeTypes+EqualsTokenElement(type:EQUALS, text:=)
+        IVariantLiteral
+          TscnGenericTokenNode(type:STRING_LITERAL, text:"Main")
+      IKeyValuePair
+        TscnIdentifierTokenNode(type:IDENTIFIER, text:type)
+        TscnTokenNodeTypes+EqualsTokenElement(type:EQUALS, text:=)
+        IVariantLiteral
+          TscnGenericTokenNode(type:STRING_LITERAL, text:"Node")
+      TscnTokenNodeTypes+RbracketTokenElement(type:RBRACKET, text:])
+      IKeyValuePair
+        TscnIdentifierTokenNode(type:IDENTIFIER, text:script)
+        TscnTokenNodeTypes+EqualsTokenElement(type:EQUALS, text:=)
+        IVariantConstructor
+          TscnIdentifierTokenNode(type:IDENTIFIER, text:ExtResource)
+          TscnTokenNodeTypes+LparenTokenElement(type:LPAREN, text:()
+          IVariantLiteral
+            TscnGenericTokenNode(type:NUMERIC_LITERAL, text:1)
+          TscnTokenNodeTypes+RparenTokenElement(type:RPAREN, text:))
+      IKeyValuePair
+        TscnIdentifierTokenNode(type:IDENTIFIER, text:mob)
+        TscnTokenNodeTypes+EqualsTokenElement(type:EQUALS, text:=)
+        IVariantConstructor
+          TscnIdentifierTokenNode(type:IDENTIFIER, text:ExtResource)
+          TscnTokenNodeTypes+LparenTokenElement(type:LPAREN, text:()
+          IVariantLiteral
+            TscnGenericTokenNode(type:NUMERIC_LITERAL, text:2)
+          TscnTokenNodeTypes+RparenTokenElement(type:RPAREN, text:))
+  ISceneElement
+    INode
+      TscnTokenNodeTypes+LbracketTokenElement(type:LBRACKET, text:[)
+      TscnTokenNodeTypes+NodeKeywordTokenElement(type:NODE_KEYWORD, text:node)
+      IKeyValuePair
+        TscnIdentifierTokenNode(type:IDENTIFIER, text:name)
+        TscnTokenNodeTypes+EqualsTokenElement(type:EQUALS, text:=)
+        IVariantLiteral
+          TscnGenericTokenNode(type:STRING_LITERAL, text:"ColorRect")
+      IKeyValuePair
+        TscnIdentifierTokenNode(type:IDENTIFIER, text:type)
+        TscnTokenNodeTypes+EqualsTokenElement(type:EQUALS, text:=)
+        IVariantLiteral
+          TscnGenericTokenNode(type:STRING_LITERAL, text:"ColorRect")
+      IKeyValuePair
+        TscnIdentifierTokenNode(type:IDENTIFIER, text:parent)
+        TscnTokenNodeTypes+EqualsTokenElement(type:EQUALS, text:=)
+        IVariantLiteral
+          TscnGenericTokenNode(type:STRING_LITERAL, text:".")
+      TscnTokenNodeTypes+RbracketTokenElement(type:RBRACKET, text:])
+      IKeyValuePair
+        TscnIdentifierTokenNode(type:IDENTIFIER, text:anchor_right)
+        TscnTokenNodeTypes+EqualsTokenElement(type:EQUALS, text:=)
+        IVariantLiteral
+          TscnGenericTokenNode(type:NUMERIC_LITERAL, text:1.0)
+      IKeyValuePair
+        TscnIdentifierTokenNode(type:IDENTIFIER, text:anchor_bottom)
+        TscnTokenNodeTypes+EqualsTokenElement(type:EQUALS, text:=)
+        IVariantLiteral
+          TscnGenericTokenNode(type:NUMERIC_LITERAL, text:1.0)
+      IKeyValuePair
+        TscnIdentifierTokenNode(type:IDENTIFIER, text:color)
+        TscnTokenNodeTypes+EqualsTokenElement(type:EQUALS, text:=)
+        IVariantConstructor
+          TscnIdentifierTokenNode(type:IDENTIFIER, text:Color)
+          TscnTokenNodeTypes+LparenTokenElement(type:LPAREN, text:()
+          IVariantLiteral
+            TscnGenericTokenNode(type:NUMERIC_LITERAL, text:0.219608)
+          TscnTokenNodeTypes+CommaTokenElement(type:COMMA, text:,)
+          IVariantLiteral
+            TscnGenericTokenNode(type:NUMERIC_LITERAL, text:0.372549)
+          TscnTokenNodeTypes+CommaTokenElement(type:COMMA, text:,)
+          IVariantLiteral
+            TscnGenericTokenNode(type:NUMERIC_LITERAL, text:0.380392)
+          TscnTokenNodeTypes+CommaTokenElement(type:COMMA, text:,)
+          IVariantLiteral
+            TscnGenericTokenNode(type:NUMERIC_LITERAL, text:1)
+          TscnTokenNodeTypes+RparenTokenElement(type:RPAREN, text:))
+      IKeyValuePair
+        TscnIdentifierTokenNode(type:IDENTIFIER, text:__meta__)
+        TscnTokenNodeTypes+EqualsTokenElement(type:EQUALS, text:=)
+        IVariantObject
+          TscnTokenNodeTypes+LbraceTokenElement(type:LBRACE, text:{)
+          IVariantMember
+            TscnGenericTokenNode(type:STRING_LITERAL, text:"_edit_use_anchors_")
+            TscnTokenNodeTypes+ColonTokenElement(type:COLON, text::)
+            IVariantLiteral
+              TscnTokenNodeTypes+FalseKeywordTokenElement(type:FALSE_KEYWORD, text:false)
+          TscnTokenNodeTypes+RbraceTokenElement(type:RBRACE, text:})
+  ISceneElement
+    INode
+      TscnTokenNodeTypes+LbracketTokenElement(type:LBRACKET, text:[)
+      TscnTokenNodeTypes+NodeKeywordTokenElement(type:NODE_KEYWORD, text:node)
+      IKeyValuePair
+        TscnIdentifierTokenNode(type:IDENTIFIER, text:name)
+        TscnTokenNodeTypes+EqualsTokenElement(type:EQUALS, text:=)
+        IVariantLiteral
+          TscnGenericTokenNode(type:STRING_LITERAL, text:"Player")
+      IKeyValuePair
+        TscnIdentifierTokenNode(type:IDENTIFIER, text:parent)
+        TscnTokenNodeTypes+EqualsTokenElement(type:EQUALS, text:=)
+        IVariantLiteral
+          TscnGenericTokenNode(type:STRING_LITERAL, text:".")
+      IKeyValuePair
+        TscnIdentifierTokenNode(type:IDENTIFIER, text:instance)
+        TscnTokenNodeTypes+EqualsTokenElement(type:EQUALS, text:=)
+        IVariantConstructor
+          TscnIdentifierTokenNode(type:IDENTIFIER, text:ExtResource)
+          TscnTokenNodeTypes+LparenTokenElement(type:LPAREN, text:()
+          IVariantLiteral
+            TscnGenericTokenNode(type:NUMERIC_LITERAL, text:3)
+          TscnTokenNodeTypes+RparenTokenElement(type:RPAREN, text:))
+      TscnTokenNodeTypes+RbracketTokenElement(type:RBRACKET, text:])
+  ISceneElement
+    INode
+      TscnTokenNodeTypes+LbracketTokenElement(type:LBRACKET, text:[)
+      TscnTokenNodeTypes+NodeKeywordTokenElement(type:NODE_KEYWORD, text:node)
+      IKeyValuePair
+        TscnIdentifierTokenNode(type:IDENTIFIER, text:name)
+        TscnTokenNodeTypes+EqualsTokenElement(type:EQUALS, text:=)
+        IVariantLiteral
+          TscnGenericTokenNode(type:STRING_LITERAL, text:"MobTimer")
+      IKeyValuePair
+        TscnIdentifierTokenNode(type:IDENTIFIER, text:type)
+        TscnTokenNodeTypes+EqualsTokenElement(type:EQUALS, text:=)
+        IVariantLiteral
+          TscnGenericTokenNode(type:STRING_LITERAL, text:"Timer")
+      IKeyValuePair
+        TscnIdentifierTokenNode(type:IDENTIFIER, text:parent)
+        TscnTokenNodeTypes+EqualsTokenElement(type:EQUALS, text:=)
+        IVariantLiteral
+          TscnGenericTokenNode(type:STRING_LITERAL, text:".")
+      TscnTokenNodeTypes+RbracketTokenElement(type:RBRACKET, text:])
+      IKeyValuePair
+        TscnIdentifierTokenNode(type:IDENTIFIER, text:wait_time)
+        TscnTokenNodeTypes+EqualsTokenElement(type:EQUALS, text:=)
+        IVariantLiteral
+          TscnGenericTokenNode(type:NUMERIC_LITERAL, text:0.5)
+  ISceneElement
+    INode
+      TscnTokenNodeTypes+LbracketTokenElement(type:LBRACKET, text:[)
+      TscnTokenNodeTypes+NodeKeywordTokenElement(type:NODE_KEYWORD, text:node)
+      IKeyValuePair
+        TscnIdentifierTokenNode(type:IDENTIFIER, text:name)
+        TscnTokenNodeTypes+EqualsTokenElement(type:EQUALS, text:=)
+        IVariantLiteral
+          TscnGenericTokenNode(type:STRING_LITERAL, text:"ScoreTimer")
+      IKeyValuePair
+        TscnIdentifierTokenNode(type:IDENTIFIER, text:type)
+        TscnTokenNodeTypes+EqualsTokenElement(type:EQUALS, text:=)
+        IVariantLiteral
+          TscnGenericTokenNode(type:STRING_LITERAL, text:"Timer")
+      IKeyValuePair
+        TscnIdentifierTokenNode(type:IDENTIFIER, text:parent)
+        TscnTokenNodeTypes+EqualsTokenElement(type:EQUALS, text:=)
+        IVariantLiteral
+          TscnGenericTokenNode(type:STRING_LITERAL, text:".")
+      TscnTokenNodeTypes+RbracketTokenElement(type:RBRACKET, text:])
+  ISceneElement
+    INode
+      TscnTokenNodeTypes+LbracketTokenElement(type:LBRACKET, text:[)
+      TscnTokenNodeTypes+NodeKeywordTokenElement(type:NODE_KEYWORD, text:node)
+      IKeyValuePair
+        TscnIdentifierTokenNode(type:IDENTIFIER, text:name)
+        TscnTokenNodeTypes+EqualsTokenElement(type:EQUALS, text:=)
+        IVariantLiteral
+          TscnGenericTokenNode(type:STRING_LITERAL, text:"StartTimer")
+      IKeyValuePair
+        TscnIdentifierTokenNode(type:IDENTIFIER, text:type)
+        TscnTokenNodeTypes+EqualsTokenElement(type:EQUALS, text:=)
+        IVariantLiteral
+          TscnGenericTokenNode(type:STRING_LITERAL, text:"Timer")
+      IKeyValuePair
+        TscnIdentifierTokenNode(type:IDENTIFIER, text:parent)
+        TscnTokenNodeTypes+EqualsTokenElement(type:EQUALS, text:=)
+        IVariantLiteral
+          TscnGenericTokenNode(type:STRING_LITERAL, text:".")
+      TscnTokenNodeTypes+RbracketTokenElement(type:RBRACKET, text:])
+      IKeyValuePair
+        TscnIdentifierTokenNode(type:IDENTIFIER, text:wait_time)
+        TscnTokenNodeTypes+EqualsTokenElement(type:EQUALS, text:=)
+        IVariantLiteral
+          TscnGenericTokenNode(type:NUMERIC_LITERAL, text:2.0)
+      IKeyValuePair
+        TscnIdentifierTokenNode(type:IDENTIFIER, text:one_shot)
+        TscnTokenNodeTypes+EqualsTokenElement(type:EQUALS, text:=)
+        IVariantLiteral
+          TscnTokenNodeTypes+TrueKeywordTokenElement(type:TRUE_KEYWORD, text:true)
+  ISceneElement
+    INode
+      TscnTokenNodeTypes+LbracketTokenElement(type:LBRACKET, text:[)
+      TscnTokenNodeTypes+NodeKeywordTokenElement(type:NODE_KEYWORD, text:node)
+      IKeyValuePair
+        TscnIdentifierTokenNode(type:IDENTIFIER, text:name)
+        TscnTokenNodeTypes+EqualsTokenElement(type:EQUALS, text:=)
+        IVariantLiteral
+          TscnGenericTokenNode(type:STRING_LITERAL, text:"StartPosition")
+      IKeyValuePair
+        TscnIdentifierTokenNode(type:IDENTIFIER, text:type)
+        TscnTokenNodeTypes+EqualsTokenElement(type:EQUALS, text:=)
+        IVariantLiteral
+          TscnGenericTokenNode(type:STRING_LITERAL, text:"Position2D")
+      IKeyValuePair
+        TscnIdentifierTokenNode(type:IDENTIFIER, text:parent)
+        TscnTokenNodeTypes+EqualsTokenElement(type:EQUALS, text:=)
+        IVariantLiteral
+          TscnGenericTokenNode(type:STRING_LITERAL, text:".")
+      TscnTokenNodeTypes+RbracketTokenElement(type:RBRACKET, text:])
+      IKeyValuePair
+        TscnIdentifierTokenNode(type:IDENTIFIER, text:position)
+        TscnTokenNodeTypes+EqualsTokenElement(type:EQUALS, text:=)
+        IVariantConstructor
+          TscnIdentifierTokenNode(type:IDENTIFIER, text:Vector2)
+          TscnTokenNodeTypes+LparenTokenElement(type:LPAREN, text:()
+          IVariantLiteral
+            TscnGenericTokenNode(type:NUMERIC_LITERAL, text:240)
+          TscnTokenNodeTypes+CommaTokenElement(type:COMMA, text:,)
+          IVariantLiteral
+            TscnGenericTokenNode(type:NUMERIC_LITERAL, text:450)
+          TscnTokenNodeTypes+RparenTokenElement(type:RPAREN, text:))
+  ISceneElement
+    INode
+      TscnTokenNodeTypes+LbracketTokenElement(type:LBRACKET, text:[)
+      TscnTokenNodeTypes+NodeKeywordTokenElement(type:NODE_KEYWORD, text:node)
+      IKeyValuePair
+        TscnIdentifierTokenNode(type:IDENTIFIER, text:name)
+        TscnTokenNodeTypes+EqualsTokenElement(type:EQUALS, text:=)
+        IVariantLiteral
+          TscnGenericTokenNode(type:STRING_LITERAL, text:"MobPath")
+      IKeyValuePair
+        TscnIdentifierTokenNode(type:IDENTIFIER, text:type)
+        TscnTokenNodeTypes+EqualsTokenElement(type:EQUALS, text:=)
+        IVariantLiteral
+          TscnGenericTokenNode(type:STRING_LITERAL, text:"Path2D")
+      IKeyValuePair
+        TscnIdentifierTokenNode(type:IDENTIFIER, text:parent)
+        TscnTokenNodeTypes+EqualsTokenElement(type:EQUALS, text:=)
+        IVariantLiteral
+          TscnGenericTokenNode(type:STRING_LITERAL, text:".")
+      TscnTokenNodeTypes+RbracketTokenElement(type:RBRACKET, text:])
+      IKeyValuePair
+        TscnIdentifierTokenNode(type:IDENTIFIER, text:curve)
+        TscnTokenNodeTypes+EqualsTokenElement(type:EQUALS, text:=)
+        IVariantConstructor
+          TscnIdentifierTokenNode(type:IDENTIFIER, text:SubResource)
+          TscnTokenNodeTypes+LparenTokenElement(type:LPAREN, text:()
+          IVariantLiteral
+            TscnGenericTokenNode(type:NUMERIC_LITERAL, text:1)
+          TscnTokenNodeTypes+RparenTokenElement(type:RPAREN, text:))
+  ISceneElement
+    INode
+      TscnTokenNodeTypes+LbracketTokenElement(type:LBRACKET, text:[)
+      TscnTokenNodeTypes+NodeKeywordTokenElement(type:NODE_KEYWORD, text:node)
+      IKeyValuePair
+        TscnIdentifierTokenNode(type:IDENTIFIER, text:name)
+        TscnTokenNodeTypes+EqualsTokenElement(type:EQUALS, text:=)
+        IVariantLiteral
+          TscnGenericTokenNode(type:STRING_LITERAL, text:"MobSpawnLocation")
+      IKeyValuePair
+        TscnIdentifierTokenNode(type:IDENTIFIER, text:type)
+        TscnTokenNodeTypes+EqualsTokenElement(type:EQUALS, text:=)
+        IVariantLiteral
+          TscnGenericTokenNode(type:STRING_LITERAL, text:"PathFollow2D")
+      IKeyValuePair
+        TscnIdentifierTokenNode(type:IDENTIFIER, text:parent)
+        TscnTokenNodeTypes+EqualsTokenElement(type:EQUALS, text:=)
+        IVariantLiteral
+          TscnGenericTokenNode(type:STRING_LITERAL, text:"MobPath")
+      TscnTokenNodeTypes+RbracketTokenElement(type:RBRACKET, text:])
+  ISceneElement
+    INode
+      TscnTokenNodeTypes+LbracketTokenElement(type:LBRACKET, text:[)
+      TscnTokenNodeTypes+NodeKeywordTokenElement(type:NODE_KEYWORD, text:node)
+      IKeyValuePair
+        TscnIdentifierTokenNode(type:IDENTIFIER, text:name)
+        TscnTokenNodeTypes+EqualsTokenElement(type:EQUALS, text:=)
+        IVariantLiteral
+          TscnGenericTokenNode(type:STRING_LITERAL, text:"HUD")
+      IKeyValuePair
+        TscnIdentifierTokenNode(type:IDENTIFIER, text:parent)
+        TscnTokenNodeTypes+EqualsTokenElement(type:EQUALS, text:=)
+        IVariantLiteral
+          TscnGenericTokenNode(type:STRING_LITERAL, text:".")
+      IKeyValuePair
+        TscnIdentifierTokenNode(type:IDENTIFIER, text:instance)
+        TscnTokenNodeTypes+EqualsTokenElement(type:EQUALS, text:=)
+        IVariantConstructor
+          TscnIdentifierTokenNode(type:IDENTIFIER, text:ExtResource)
+          TscnTokenNodeTypes+LparenTokenElement(type:LPAREN, text:()
+          IVariantLiteral
+            TscnGenericTokenNode(type:NUMERIC_LITERAL, text:4)
+          TscnTokenNodeTypes+RparenTokenElement(type:RPAREN, text:))
+      TscnTokenNodeTypes+RbracketTokenElement(type:RBRACKET, text:])
+  ISceneElement
+    INode
+      TscnTokenNodeTypes+LbracketTokenElement(type:LBRACKET, text:[)
+      TscnTokenNodeTypes+NodeKeywordTokenElement(type:NODE_KEYWORD, text:node)
+      IKeyValuePair
+        TscnIdentifierTokenNode(type:IDENTIFIER, text:name)
+        TscnTokenNodeTypes+EqualsTokenElement(type:EQUALS, text:=)
+        IVariantLiteral
+          TscnGenericTokenNode(type:STRING_LITERAL, text:"Music")
+      IKeyValuePair
+        TscnIdentifierTokenNode(type:IDENTIFIER, text:type)
+        TscnTokenNodeTypes+EqualsTokenElement(type:EQUALS, text:=)
+        IVariantLiteral
+          TscnGenericTokenNode(type:STRING_LITERAL, text:"AudioStreamPlayer")
+      IKeyValuePair
+        TscnIdentifierTokenNode(type:IDENTIFIER, text:parent)
+        TscnTokenNodeTypes+EqualsTokenElement(type:EQUALS, text:=)
+        IVariantLiteral
+          TscnGenericTokenNode(type:STRING_LITERAL, text:".")
+      TscnTokenNodeTypes+RbracketTokenElement(type:RBRACKET, text:])
+      IKeyValuePair
+        TscnIdentifierTokenNode(type:IDENTIFIER, text:stream)
+        TscnTokenNodeTypes+EqualsTokenElement(type:EQUALS, text:=)
+        IVariantConstructor
+          TscnIdentifierTokenNode(type:IDENTIFIER, text:ExtResource)
+          TscnTokenNodeTypes+LparenTokenElement(type:LPAREN, text:()
+          IVariantLiteral
+            TscnGenericTokenNode(type:NUMERIC_LITERAL, text:5)
+          TscnTokenNodeTypes+RparenTokenElement(type:RPAREN, text:))
+  ISceneElement
+    INode
+      TscnTokenNodeTypes+LbracketTokenElement(type:LBRACKET, text:[)
+      TscnTokenNodeTypes+NodeKeywordTokenElement(type:NODE_KEYWORD, text:node)
+      IKeyValuePair
+        TscnIdentifierTokenNode(type:IDENTIFIER, text:name)
+        TscnTokenNodeTypes+EqualsTokenElement(type:EQUALS, text:=)
+        IVariantLiteral
+          TscnGenericTokenNode(type:STRING_LITERAL, text:"DeathSound")
+      IKeyValuePair
+        TscnIdentifierTokenNode(type:IDENTIFIER, text:type)
+        TscnTokenNodeTypes+EqualsTokenElement(type:EQUALS, text:=)
+        IVariantLiteral
+          TscnGenericTokenNode(type:STRING_LITERAL, text:"AudioStreamPlayer")
+      IKeyValuePair
+        TscnIdentifierTokenNode(type:IDENTIFIER, text:parent)
+        TscnTokenNodeTypes+EqualsTokenElement(type:EQUALS, text:=)
+        IVariantLiteral
+          TscnGenericTokenNode(type:STRING_LITERAL, text:".")
+      TscnTokenNodeTypes+RbracketTokenElement(type:RBRACKET, text:])
+      IKeyValuePair
+        TscnIdentifierTokenNode(type:IDENTIFIER, text:stream)
+        TscnTokenNodeTypes+EqualsTokenElement(type:EQUALS, text:=)
+        IVariantConstructor
+          TscnIdentifierTokenNode(type:IDENTIFIER, text:ExtResource)
+          TscnTokenNodeTypes+LparenTokenElement(type:LPAREN, text:()
+          IVariantLiteral
+            TscnGenericTokenNode(type:NUMERIC_LITERAL, text:6)
+          TscnTokenNodeTypes+RparenTokenElement(type:RPAREN, text:))
+  ISceneElement
+    IConnection
+      TscnTokenNodeTypes+LbracketTokenElement(type:LBRACKET, text:[)
+      TscnTokenNodeTypes+ConnectionKeywordTokenElement(type:CONNECTION_KEYWORD, text:connection)
+      IKeyValuePair
+        TscnIdentifierTokenNode(type:IDENTIFIER, text:signal)
+        TscnTokenNodeTypes+EqualsTokenElement(type:EQUALS, text:=)
+        IVariantLiteral
+          TscnGenericTokenNode(type:STRING_LITERAL, text:"Hit")
+      IKeyValuePair
+        TscnIdentifierTokenNode(type:IDENTIFIER, text:from)
+        TscnTokenNodeTypes+EqualsTokenElement(type:EQUALS, text:=)
+        IVariantLiteral
+          TscnGenericTokenNode(type:STRING_LITERAL, text:"Player")
+      IKeyValuePair
+        TscnIdentifierTokenNode(type:IDENTIFIER, text:to)
+        TscnTokenNodeTypes+EqualsTokenElement(type:EQUALS, text:=)
+        IVariantLiteral
+          TscnGenericTokenNode(type:STRING_LITERAL, text:".")
+      IKeyValuePair
+        TscnIdentifierTokenNode(type:IDENTIFIER, text:method)
+        TscnTokenNodeTypes+EqualsTokenElement(type:EQUALS, text:=)
+        IVariantLiteral
+          TscnGenericTokenNode(type:STRING_LITERAL, text:"GameOver")
+      TscnTokenNodeTypes+RbracketTokenElement(type:RBRACKET, text:])
+  ISceneElement
+    IConnection
+      TscnTokenNodeTypes+LbracketTokenElement(type:LBRACKET, text:[)
+      TscnTokenNodeTypes+ConnectionKeywordTokenElement(type:CONNECTION_KEYWORD, text:connection)
+      IKeyValuePair
+        TscnIdentifierTokenNode(type:IDENTIFIER, text:signal)
+        TscnTokenNodeTypes+EqualsTokenElement(type:EQUALS, text:=)
+        IVariantLiteral
+          TscnGenericTokenNode(type:STRING_LITERAL, text:"timeout")
+      IKeyValuePair
+        TscnIdentifierTokenNode(type:IDENTIFIER, text:from)
+        TscnTokenNodeTypes+EqualsTokenElement(type:EQUALS, text:=)
+        IVariantLiteral
+          TscnGenericTokenNode(type:STRING_LITERAL, text:"MobTimer")
+      IKeyValuePair
+        TscnIdentifierTokenNode(type:IDENTIFIER, text:to)
+        TscnTokenNodeTypes+EqualsTokenElement(type:EQUALS, text:=)
+        IVariantLiteral
+          TscnGenericTokenNode(type:STRING_LITERAL, text:".")
+      IKeyValuePair
+        TscnIdentifierTokenNode(type:IDENTIFIER, text:method)
+        TscnTokenNodeTypes+EqualsTokenElement(type:EQUALS, text:=)
+        IVariantLiteral
+          TscnGenericTokenNode(type:STRING_LITERAL, text:"OnMobTimerTimeout")
+      TscnTokenNodeTypes+RbracketTokenElement(type:RBRACKET, text:])
+  ISceneElement
+    IConnection
+      TscnTokenNodeTypes+LbracketTokenElement(type:LBRACKET, text:[)
+      TscnTokenNodeTypes+ConnectionKeywordTokenElement(type:CONNECTION_KEYWORD, text:connection)
+      IKeyValuePair
+        TscnIdentifierTokenNode(type:IDENTIFIER, text:signal)
+        TscnTokenNodeTypes+EqualsTokenElement(type:EQUALS, text:=)
+        IVariantLiteral
+          TscnGenericTokenNode(type:STRING_LITERAL, text:"timeout")
+      IKeyValuePair
+        TscnIdentifierTokenNode(type:IDENTIFIER, text:from)
+        TscnTokenNodeTypes+EqualsTokenElement(type:EQUALS, text:=)
+        IVariantLiteral
+          TscnGenericTokenNode(type:STRING_LITERAL, text:"ScoreTimer")
+      IKeyValuePair
+        TscnIdentifierTokenNode(type:IDENTIFIER, text:to)
+        TscnTokenNodeTypes+EqualsTokenElement(type:EQUALS, text:=)
+        IVariantLiteral
+          TscnGenericTokenNode(type:STRING_LITERAL, text:".")
+      IKeyValuePair
+        TscnIdentifierTokenNode(type:IDENTIFIER, text:method)
+        TscnTokenNodeTypes+EqualsTokenElement(type:EQUALS, text:=)
+        IVariantLiteral
+          TscnGenericTokenNode(type:STRING_LITERAL, text:"OnScoreTimerTimeout")
+      TscnTokenNodeTypes+RbracketTokenElement(type:RBRACKET, text:])
+  ISceneElement
+    IConnection
+      TscnTokenNodeTypes+LbracketTokenElement(type:LBRACKET, text:[)
+      TscnTokenNodeTypes+ConnectionKeywordTokenElement(type:CONNECTION_KEYWORD, text:connection)
+      IKeyValuePair
+        TscnIdentifierTokenNode(type:IDENTIFIER, text:signal)
+        TscnTokenNodeTypes+EqualsTokenElement(type:EQUALS, text:=)
+        IVariantLiteral
+          TscnGenericTokenNode(type:STRING_LITERAL, text:"timeout")
+      IKeyValuePair
+        TscnIdentifierTokenNode(type:IDENTIFIER, text:from)
+        TscnTokenNodeTypes+EqualsTokenElement(type:EQUALS, text:=)
+        IVariantLiteral
+          TscnGenericTokenNode(type:STRING_LITERAL, text:"StartTimer")
+      IKeyValuePair
+        TscnIdentifierTokenNode(type:IDENTIFIER, text:to)
+        TscnTokenNodeTypes+EqualsTokenElement(type:EQUALS, text:=)
+        IVariantLiteral
+          TscnGenericTokenNode(type:STRING_LITERAL, text:".")
+      IKeyValuePair
+        TscnIdentifierTokenNode(type:IDENTIFIER, text:method)
+        TscnTokenNodeTypes+EqualsTokenElement(type:EQUALS, text:=)
+        IVariantLiteral
+          TscnGenericTokenNode(type:STRING_LITERAL, text:"OnStartTimerTimeout")
+      TscnTokenNodeTypes+RbracketTokenElement(type:RBRACKET, text:])
+  ISceneElement
+    IConnection
+      TscnTokenNodeTypes+LbracketTokenElement(type:LBRACKET, text:[)
+      TscnTokenNodeTypes+ConnectionKeywordTokenElement(type:CONNECTION_KEYWORD, text:connection)
+      IKeyValuePair
+        TscnIdentifierTokenNode(type:IDENTIFIER, text:signal)
+        TscnTokenNodeTypes+EqualsTokenElement(type:EQUALS, text:=)
+        IVariantLiteral
+          TscnGenericTokenNode(type:STRING_LITERAL, text:"StartGame")
+      IKeyValuePair
+        TscnIdentifierTokenNode(type:IDENTIFIER, text:from)
+        TscnTokenNodeTypes+EqualsTokenElement(type:EQUALS, text:=)
+        IVariantLiteral
+          TscnGenericTokenNode(type:STRING_LITERAL, text:"HUD")
+      IKeyValuePair
+        TscnIdentifierTokenNode(type:IDENTIFIER, text:to)
+        TscnTokenNodeTypes+EqualsTokenElement(type:EQUALS, text:=)
+        IVariantLiteral
+          TscnGenericTokenNode(type:STRING_LITERAL, text:".")
+      IKeyValuePair
+        TscnIdentifierTokenNode(type:IDENTIFIER, text:method)
+        TscnTokenNodeTypes+EqualsTokenElement(type:EQUALS, text:=)
+        IVariantLiteral
+          TscnGenericTokenNode(type:STRING_LITERAL, text:"NewGame")
+      TscnTokenNodeTypes+RbracketTokenElement(type:RBRACKET, text:])
+

@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!-- About this file
+
+     The root node can be anything. TokenGenerator doesn't care. It uses whatever the root node is,
+     and then looks for `BaseTokenNodeTypeIndex`, `TokenTypeNamespace` and `TokenTypeClass` child elements.
+     It will also look for `Import` elements which are used to add arbitrary using namespaces.
+     It will then loop over all other children of the root node, and treat them like sections. Each
+     child node must have a `NodeType` attribute, and optionally a `TokenElement` attribute. If there
+     is no `TokenElement` attribute, the token is generated as an instance of the `NodeType` class. If
+     there is a `TokenElement` attribute, then a new class is generated for the node type and the element.
+     There is no real difference between the two - identification is carried out based on reference equality
+     to a singleton instance and and generated types are private. The only difference is the derived classes
+     will have a smaller footprint - no text or node type fields. But that's negligible. On the flip side,
+     there will be fewer classes. Micro-optimisation swings and roundabouts.
+     When generating, TokenGenerator will look for `name` and `representation` attributes.
+-->
+<TscnTokens>
+
+  <!-- Default is 1000 -->
+  <BaseTokenNodeTypeIndex>1000</BaseTokenNodeTypeIndex>
+  <Import>JetBrains.ReSharper.Plugins.Godot.Tscn.Psi.Parsing.TokenNodes</Import>
+  <TokenTypeNamespace>JetBrains.ReSharper.Plugins.Godot.Tscn.Psi.Parsing.TokenNodeTypes</TokenTypeNamespace>
+  <TokenTypeClass>TscnTokenNodeTypes</TokenTypeClass>
+
+  <Tokens NodeType="TscnFixedLengthTokenNodeType" TokenElement="TscnFixedLengthTokenNode">
+    <Token name="LBRACE" representation="{" />
+    <Token name="RBRACE" representation="}" />
+    <Token name="LPAREN" representation="(" />
+    <Token name="RPAREN" representation=")" />
+    <Token name="LBRACKET" representation="[" />
+    <Token name="RBRACKET" representation="]" />
+    <Token name="COMMA" representation="," />
+    <Token name="COLON" representation=":" />
+    <Token name="PERIOD" representation="." />
+    <Token name="EQUALS" representation="=" />
+  </Tokens>
+  
+  <FileDescriptorKeywords NodeType="TscnKeywordTokenNodeType" TokenElement="TscnFixedLengthTokenNode">
+    <Keyword name="SCENE_KEYWORD" representation="gd_scene" contextual="true" />
+    <Keyword name="FORMAT_KEYWORD" representation="format" contextual="true" />
+    <Keyword name="LOAD_STEPS_KEYWORD" representation="load_steps" contextual="true" />
+    <Keyword name="TYPE_KEYWORD" representation="type" contextual="true" />
+    <Keyword name="RESOURCE_KEYWORD" representation="gd_resource" contextual="true" />
+  </FileDescriptorKeywords>
+    
+  <HeadingKeywords NodeType="TscnKeywordTokenNodeType" TokenElement="TscnFixedLengthTokenNode">
+    <Keyword name="EXT_RESOURCE_KEYWORD" representation="ext_resource" contextual="true" />
+    <Keyword name="SUB_RESOURCE_KEYWORD" representation="sub_resource" contextual="true" />
+    <Keyword name="MAIN_RESOURCE_KEYWORD" representation="resource" contextual="true" />
+    <Keyword name="NODE_KEYWORD" representation="node" contextual="true" />
+    <Keyword name="CONNECTION_KEYWORD" representation="connection" contextual="true" />
+  </HeadingKeywords>
+    
+  <ValueKeywords NodeType="TscnKeywordTokenNodeType" TokenElement="TscnFixedLengthTokenNode">
+    <Keyword name="FALSE_KEYWORD" representation="false" contextual="true" />
+    <Keyword name="TRUE_KEYWORD" representation="true" contextual="true" />
+    <Keyword name="NULL_KEYWORD" representation="null" contextual="true" />
+    <Keyword name="NIL_KEYWORD" representation="nil" contextual="true" />
+    <Keyword name="INF_KEYWORD" representation="inf" contextual="true" />
+    <Keyword name="NAN_KEYWORD" representation="nan" contextual="true" />
+  </ValueKeywords>
+</TscnTokens>
