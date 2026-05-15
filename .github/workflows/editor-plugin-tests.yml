@@ -6,6 +6,7 @@ on:
   workflow_call:
   pull_request:
   merge_group:
+  workflow_dispatch:
 
 env:
 
@@ -19,7 +20,7 @@ env:
 
 defaults:
   run:
-    working-directory: godot-editor-addon/native/rider-plugin
+    working-directory: godot-editor-addon
 
 jobs:
   build:
@@ -58,12 +59,12 @@ jobs:
       # Build GDExtension
       - name: Configure GDExtension
         run: >
-          cmake -S . -B cmake-build
+          cmake --preset ninja-debug
           -DCMAKE_C_COMPILER_LAUNCHER=sccache
           -DCMAKE_CXX_COMPILER_LAUNCHER=sccache
 
       - name: Build GDExtension
-        run: cmake --build cmake-build --verbose
+        run: cmake --build build/ninja-debug --verbose
 
       - name: Download requested Godot version for testing
         if: matrix.target.run-tests
@@ -77,5 +78,5 @@ jobs:
         if: matrix.target.run-tests
         run: |
           $GODOT --headless --version
-          cd ..
+          cd native
           ./run-tests.sh
