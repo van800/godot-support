@@ -109,6 +109,10 @@ jobs:
           name: rider-plugin-addons
           path: rider-plugin-addons
 
+      - name: Update plugin version
+        run: |
+          sed -i 's/^version=.*/version="${{ steps.rel.outputs.tag }}"/' rider-plugin-addons/addons/rider-plugin/plugin.cfg
+
       - name: Prepare archive
         run: |
           zip -r rider-plugin-addons.zip rider-plugin-addons
