@@ -11,7 +11,7 @@ if(APPLE AND NOT CMAKE_OSX_ARCHITECTURES)
 endif()
 
 set(LIBNAME "rider-gdextension") # "The name of the library"
-set(GODOT_PROJECT_DIR "..")
+set(GODOT_PROJECT_DIR "../..")
 
 # Make sure all the dependencies are satisfied
 find_package(Python3 3.4 REQUIRED)
@@ -90,7 +90,7 @@ if(NOT WIN32)
     set_target_properties(${LIBNAME} PROPERTIES PREFIX "lib")
 endif()
 
-set(GODOT_PROJECT_BINARY_DIR "${PROJECT_SOURCE_DIR}/${GODOT_PROJECT_DIR}/bin/${GODOTCPP_PLATFORM}")
+set(GODOT_PROJECT_BINARY_DIR "${PROJECT_SOURCE_DIR}/${GODOT_PROJECT_DIR}/addons/rider-plugin/bin/${GODOTCPP_PLATFORM}")
 
 add_custom_command(TARGET ${LIBNAME} POST_BUILD
     COMMAND ${CMAKE_COMMAND} -E echo "POST_BUILD: Copying $<TARGET_FILE:${LIBNAME}> to ${GODOT_PROJECT_BINARY_DIR}/$<TARGET_FILE_NAME:${LIBNAME}>"
