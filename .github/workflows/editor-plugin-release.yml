@@ -61,12 +61,12 @@ jobs:
       # Build GDExtension
       - name: Configure GDExtension
         run: >
-          cmake --preset ninja-debug
+          cmake --preset ninja-release
           -DCMAKE_C_COMPILER_LAUNCHER=sccache
           -DCMAKE_CXX_COMPILER_LAUNCHER=sccache
 
       - name: Build GDExtension
-        run: cmake --build build/ninja-debug --verbose
+        run: cmake --build build/ninja-release --verbose
 
       # Upload the build
       - name: Upload Artifact
