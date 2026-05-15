@@ -3,7 +3,6 @@
 
 name: Editor Plugin Tests
 on:
-  workflow_call:
   pull_request:
   merge_group:
   workflow_dispatch:
