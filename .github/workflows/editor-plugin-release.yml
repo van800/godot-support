@@ -23,7 +23,7 @@ jobs:
   build:
     defaults:
       run:
-        working-directory: godot-editor-addon/native/rider-plugin
+        working-directory: godot-editor-addon
     strategy:
       fail-fast: false
       matrix:
@@ -32,7 +32,7 @@ jobs:
             { platform: linux, arch: x86_64, os: ubuntu-22.04 },
             { platform: linux, arch: arm64, os: ubuntu-22.04-arm },
             { platform: windows, arch: x86_64, os: windows-latest },
-            { platform: windows, arch: arm64, os: windows-latest, cmake-flags: "-A ARM64" },
+            { platform: windows, arch: arm64, os: windows-latest },
             { platform: macos, arch: universal, os: macos-latest },
           ]
         target-type: [editor]
@@ -61,13 +61,12 @@ jobs:
       # Build GDExtension
       - name: Configure GDExtension
         run: >
-          cmake -S . -B cmake-build
+          cmake --preset ninja-debug
           -DCMAKE_C_COMPILER_LAUNCHER=sccache
           -DCMAKE_CXX_COMPILER_LAUNCHER=sccache
-          ${{ matrix.target.cmake-flags }}
 
       - name: Build GDExtension
-        run: cmake --build cmake-build --verbose
+        run: cmake --build build/ninja-debug --verbose
 
       # Upload the build
       - name: Upload Artifact
