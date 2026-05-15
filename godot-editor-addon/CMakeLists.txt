@@ -4,14 +4,13 @@ cmake_minimum_required(VERSION 3.17)
 project(Game)
 
 file(GLOB_RECURSE GAME_SOURCES "${CMAKE_CURRENT_SOURCE_DIR}/addons/rider-plugin/*")
-list(FILTER GAME_SOURCES EXCLUDE REGEX "${CMAKE_CURRENT_SOURCE_DIR}/addons/rider-plugin/cpp/.*")
 
 add_custom_target(Game SOURCES ${GAME_SOURCES}
         main.tscn
         project.godot
     )
 
-add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/addons/rider-plugin/cpp SYSTEM)
+add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/native/rider-plugin SYSTEM)
 
 # Prevent Godot from importing build artifacts as project resources
 file(TOUCH "${CMAKE_BINARY_DIR}/.gdignore")

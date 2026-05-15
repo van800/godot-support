@@ -5,6 +5,8 @@ GODOT=${GODOT:-godot}
 END_STRING="==== rider-addon-tests finished ===="
 FAILURE_STRING="******** FAILED ********"
 
+cd "$(dirname "$0")/.."
+
 OUTPUT=$($GODOT --editor --headless --rider-addon-tests --quit)
 ERRCODE=$?
 
