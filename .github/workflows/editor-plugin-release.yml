@@ -69,11 +69,17 @@ jobs:
         run: cmake --build build/ninja-release --verbose
 
       # Upload the build
+      - name: Stage Artifact
+        shell: bash
+        run: |
+          mkdir -p artifact/addons
+          cp -r addons/rider-plugin artifact/addons/
+
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: rider-plugin-addons-${{ matrix.target.platform }}-${{ matrix.target.arch }}-${{ matrix.float-precision }}-${{ matrix.target-type }}
-          path: godot-editor-addon/addons/rider-plugin
+          name: root-dir-${{ matrix.target.platform }}-${{ matrix.target.arch }}-${{ matrix.float-precision }}-${{ matrix.target-type }}
+          path: godot-editor-addon/artifact
 
   # Merges all the build artifacts together into a single artifact
   merge:
@@ -86,8 +92,8 @@ jobs:
       - name: Merge Artifacts
         uses: actions/upload-artifact/merge@v4
         with:
-          name: rider-plugin-addons
-          pattern: rider-plugin-addons-*
+          name: root-dir
+          pattern: root-dir-*
           delete-merged: true
 
   release:
@@ -100,12 +106,12 @@ jobs:
       - name: Download merged artifact
         uses: actions/download-artifact@v4
         with:
-          name: rider-plugin-addons
-          path: rider-plugin-addons
+          name: root-dir
+          path: root-dir
 
       - name: Prepare archive
         run: |
-          zip -r rider-plugin-addons.zip rider-plugin-addons
+          zip -r root-dir.zip root-dir
 
       - name: Compute release params
         id: rel
@@ -131,7 +137,7 @@ jobs:
         with:
           tag_name: ${{ steps.rel.outputs.tag }}
           name: ${{ steps.rel.outputs.name }}
-          files: rider-plugin-addons.zip
+          files: root-dir.zip
           draft: ${{ github.event.inputs.draft }}
           prerelease: ${{ github.event.inputs.prerelease }}
           generate_release_notes: true
