@@ -55,7 +55,7 @@ jobs:
       - name: Install minimum supported CMake
         uses: lukka/get-cmake@latest
         with:
-          cmakeVersion: "3.17.0" # should match the version in the `CMakeLists.txt`
+          cmakeVersion: "3.24.0" # should match the version in the `CMakeLists.txt`
           
       - name: Verify CMake version
         run: cmake --version
