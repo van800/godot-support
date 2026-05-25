@@ -56,6 +56,9 @@ jobs:
         uses: lukka/get-cmake@latest
         with:
           cmakeVersion: "3.25.0" # should match the version in the `CMakeLists.txt`
+          
+      - name: Verify CMake version
+        run: cmake --version
 
       - name: Run sccache
         uses: mozilla-actions/sccache-action@v0.0.9
